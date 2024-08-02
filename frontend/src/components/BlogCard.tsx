@@ -47,28 +47,42 @@ export function Circle()
     </div>
 }
 export function Avatar({ name, size = "small" }: { name: string, size?: "small" | "big" }) {
-  const navigate=useNavigate()
-  const [open,setopen]=useState<boolean>(false)
-  const handledropdow=(state:boolean)=>{
-     setopen(!state)
-  }
-    return <div onClick={()=>handledropdow(open)} className={` relative inline-flex items-center justify-center overflow-hidden bg-gray-100  dark:bg-gray-600 rounded-full ${size === "small" ? "w-6 h-6" : "w-10 h-10"}`}>
-    <span className={`${size === "small" ? "text-xs" : "text-md"} font-extralight text-gray-600 dark:text-gray-300`}>
-        {name[0]}
-    </span>
-    <div>
-    {open&&(
-      <div className="">
-        <button className="" onClick={()=>{
-        localStorage.removeItem("token")
-        navigate("/")
-      }}>
-        Signout
-      </button>
+  const [open, setOpen] = useState<boolean>(false);
+  const navigate = useNavigate();
+
+  const handleDropdown = () => {
+    setOpen(!open);
+  };
+
+  const handleSignOut = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
+
+  return (
+    <div className="relative inline-block text-left">
+      <div onClick={handleDropdown} className={`inline-flex items-center justify-center overflow-hidden bg-gray-100 dark:bg-gray-600 rounded-full cursor-pointer ${size === "small" ? "w-6 h-6" : "w-10 h-10"}`}>
+        <span className={`${size === "small" ? "text-xs" : "text-md"} font-extralight text-gray-600 dark:text-gray-300`}>
+          {name[0]}
+        </span>
       </div>
-      
-    )}
+
+      {open && (
+        <div className="z-10 absolute right-0 mt-2 w-44 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
+          <div className="py-1">
+            <button
+              className="block w-full px-4 py-2 text-sm text-left text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+              onClick={handleSignOut}
+            >
+              Sign out
+            </button>
+          </div>
+        </div>
+      )}
     </div>
-    
-</div>
+  );
 }
+
+
+
+
