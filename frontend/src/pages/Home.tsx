@@ -8,14 +8,14 @@ export const Home = () => {
       <div className="flex justify-between bg-amber-50	border-b-full	" >
       <div onClick={()=>{
         navigate("/")
-      }} className="ml-52 pt-4 cursor-pointer font-serif font-bold text-3xl">
+      }} className="ml-52 pt-3 cursor-pointer font-serif font-bold text-3xl">
         Medium
       </div>
    
        <div className="flex justify-between mr-44">
        <div onClick={()=>{
          navigate("/signin")
-        }} className="pr-20 cursor-pointer pt-5">
+        }} className="pr-20 font-normal cursor-pointer pt-4">
             Sign in
         </div>
         <div className="pt-2">
