@@ -4,8 +4,8 @@ import { Link } from "react-router-dom"
 export const Home = () => {
     const navigate=useNavigate()
   return (
-    <div>
-      <div className="flex justify-between bg-amber-50	border-b-full	" >
+    <div className="bg-amber-50 min-h-screen">
+      <div className="flex justify-between 	border-b-full	" >
       <div onClick={()=>{
         navigate("/")
       }} className="ml-52 pt-3 cursor-pointer font-serif font-bold text-3xl">
@@ -32,17 +32,26 @@ export const Home = () => {
 Get 20% off membership for a limited time
 </Link>
       </div>
-       <div className="bg-amber-50 h-svh">
-       <div className="flex justify-center pt-32 h-[75vh]  size border  border-b-gray-400">
+       <div >
+       <div className="flex justify-start pt-16 h-[75vh]  size border  border-b-gray-400">
         <div className="mr-96 ">
-        <div className="flex flex-col">
-        <div className="text-8xl font-sans">HUMAN</div>
-        <div className="text-8xl font-sans">stories & ideas</div>
+        <div className="flex flex-col  w-auto ml-32">
+        <div className="text-9xl font-sans">Human</div>
+        <div className="text-9xl font-sans">stories & ideas</div>
         <div className="mt-10 text-2xl font-medium">A place to read, write, and deepen your understanding</div>
        
-       <button type="button" onClick={()=>navigate("/signup")} className="text-white mt-8 bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full
-         text-sm px-5 py-2.5 me-2 mb-2 ">
-        Start Reading</button>
+        <div className="p-4 mt-4 w-full flex ">
+    <span>
+        <button 
+            type="button" 
+            onClick={() => navigate("/signup")} 
+            className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium 
+            rounded-full text-sm px-8 py-3">
+            Start Reading
+        </button>
+    </span>
+</div>
+
         </div>
       </div>
         </div>
