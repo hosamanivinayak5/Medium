@@ -31,7 +31,9 @@ export const Auth=({type}:{type:"signup" |"signin"})=>{
         <div className="px-10">
     <div>
        <div className="text-3xl font-extrabold">
-       Create your account
+      {
+        type==="signin"?"Log in to your account":"Create your account"
+      }
         </div>
         <div className=" text-slate-400">
            {
