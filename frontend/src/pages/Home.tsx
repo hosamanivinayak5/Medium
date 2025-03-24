@@ -9,7 +9,7 @@ export const Home = () => {
       <div onClick={()=>{
         navigate("/")
       }} className="ml-52 pt-3 cursor-pointer font-serif font-bold text-3xl">
-        Medium
+        Redium
       </div>
    
        <div className="flex justify-between mr-44">
